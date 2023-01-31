@@ -2,7 +2,9 @@ im = rescale(rgb2gray(imread('data/lenna.png')));
 
 N = 128 ;
 
-Hada = sqrt(N) * fwht(eye(N), N, 'dyadic');
+% Hada = sqrt(N) * fwht(eye(N), N, 'dyadic');
+Hada2 = sqrt(N) * fwht(eye(N), N, 'sequency');
+% Hada3 = sqrt(N) * fwht(eye(N), N, 'hadamard');
 Four = (1 / sqrt(N)) * dftmtx(N);
 Cosin = dctmtx(N);
 Haar = generate_wavelet(N, 'haar');%generate_haar(512);
@@ -28,7 +30,7 @@ U3 = Hada * DB1';
 
 % haar, dmey, sym4, coif4, fk6
 
-Psi = {Hada, Four, Cosin, "haar", "db4", "db8", "db12", "dmey", "sym4", "sym10", "sym22",    "bior1.1", "bior2.8", "bior5.5",     "rbio1.1", "rbio2.8", "rbio5.5", "coif1", "coif4", "fk6", "fk22"};
+Psi = {Hada2, Four, Cosin, "haar", "db4"};%  "db8", "db12", "dmey", "sym4", "sym10", "sym22"};%    "bior1.1", "bior2.8", "bior5.5",     "rbio1.1", "rbio2.8", "rbio5.5", "coif1", "coif4", "fk6", "fk22"};
 % Psi = {Hada, Cosin, "dmey", "sym4"};
 
 figure();
@@ -41,9 +43,9 @@ ncols = m;
 for i = 1:m
     for j = i:m
         
-        if i >= 4 && j >= 4
-            continue;
-        end
+%         if i >= 4 && j >= 4
+%             continue;
+%         end
         
         if isstring(Psi{i})
             U1 = generate_wavelet(N, char(Psi{i}));

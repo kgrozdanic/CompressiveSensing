@@ -1,6 +1,7 @@
 function y = op(x, mode, idx, n)
     if mode == 1
          z = idct2(reshape(x, [n, n]));
+         imshow(z);
          y = z(idx);
          y = y(:);
     else
