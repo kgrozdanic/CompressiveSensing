@@ -1,3 +1,4 @@
+%% podsjetimo se kako su izgledale apsolutne vrijednosti A
 N = 512*8;
 
 Had = sqrt(N) * fwht(eye(N), N, 'sequency');

@@ -1,19 +1,13 @@
-im = rescale(rgb2gray(imread('data/lenna.png')));
-
+%% vizualizacije koherentnosti
 n = 1024 * 4;
 
-% Hada = sqrt(n) * fwht(eye(n), n, 'dyadic');
-Hada2 = sqrt(n) * fwht(eye(n), n, 'sequency');
-% Hada3 = sqrt(n) * fwht(eye(n), n, 'hadamard');
+Hada = sqrt(n) * fwht(eye(n), n, 'sequency');
 Four = (1 / sqrt(n)) * dftmtx(n);
 Cosin = dctmtx(n);
-Haar = generate_wavelet(n, 'haar');%generate_haar(512);
+Haar = generate_wavelet(n, 'haar');
 DB1 = generate_wavelet(n, 'db4');
 
-
-% haar, dmey, sym4, coif4, fk6
-
-Psi = {Cosin, Four, "haar", "db4"};%  "db8", "db12", "dmey", "sym4", "sym10", "sym22"};%    "bior1.1", "bior2.8", "bior5.5",     "rbio1.1", "rbio2.8", "rbio5.5", "coif1", "coif4", "fk6", "fk22"};
+Psi = {Cosin, Four, "haar", "db4"};
 names = {'DCT', 'DFT', 'Haar', 'db4'};
 
 f = figure();
@@ -35,7 +29,7 @@ for i = 1:length(Psi)
        U1_name = '$U_{gauss}U_{';
        mutual_coherence(U1)
    else
-       U1 = Hada2;
+       U1 = Hada;
        U1_name = '$U_{Had}U_{';
    end
    
@@ -53,4 +47,4 @@ end
 h = axes(f, 'visible', 'off'); 
 colorbar(h,'Position',[0.93 0.168 0.022 0.7]);
 
-% saveas(gcf, 'data/coherence.png');
+saveas(gcf, 'plots/coherence.png');

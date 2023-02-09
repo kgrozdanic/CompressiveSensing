@@ -1,20 +1,14 @@
-perc = 0.3;
-epsilon = 0;
-
+%% load image
 im = rescale(imread('data/kg_.png'));
-% imwrite(im, 'kg_.png');
 im((im > 0.3) & (im < 0.7)) = 0;
-
-imshow(im);
-
 x = im(:);
-mean(x ~= 0)
+
 n = numel(x);
 
-
+%% eksperiment - uspješnost rekonstrukcije s razlièitim uvjetima
 f = figure();
 start = 400; w = 120; h = 200;
-f.Position = [1.0063e+03 226.3333 578 926]; %[start start start+w start+h];
+f.Position = [1.0063e+03 226.3333 578 926];
 
 A_ = randn(n, n);
 idx = randperm(n);
@@ -52,4 +46,4 @@ for row=1:4
     end
 end
 
-saveas(gcf, 'data/basic_CS.png');
+saveas(gcf, 'plots/l1_l2.png');

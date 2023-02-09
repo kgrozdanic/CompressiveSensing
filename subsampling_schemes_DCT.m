@@ -1,3 +1,4 @@
+%% dijagonalna strategija oèitavanja
 function [idx] = subsampling_schemes_DCT(n, m, mode)
     e = ones(n,1);
     

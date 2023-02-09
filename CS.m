@@ -6,9 +6,9 @@ function [s] = CS(x, opA, Phi, idx, epsilon)
     if idx ~= -1
         y = Phi(x, 1);
         y = y(idx);
+    else
+        y = Phi(x, 1);
     end
-    
-    y = Phi(x, 1);
     
     y = y(:);   
     
