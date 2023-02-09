@@ -46,7 +46,7 @@ for row=1:4
         end
                 
         if epsilon == -1
-            label_h = ylabel(sprintf('%d%% sampled', round(perc(row) * 100)), 'FontSize', 12);
+            label_h = ylabel(sprintf('%d%% oèitano', round(perc(row) * 100)), 'FontSize', 12);
             label_h.Position(1) = label_h.Position(1) + 15;
         end     
     end

@@ -1,4 +1,4 @@
-N = 512;
+N = 512*8;
 
 Had = sqrt(N) * fwht(eye(N), N, 'sequency');
 
@@ -23,4 +23,4 @@ for i = 1:length(mats)
     end
 end
 
-saveas(gcf, 'data/coh.png');
+% saveas(gcf, 'data/coh.png');
