@@ -3,7 +3,6 @@ n = size(im, 1);
 y = dct2(im);
 
 figure();
-%subplot(1, 3, 1);
 imshow(im);
 
 f = figure();
@@ -25,4 +24,3 @@ ylim([-50 50]);
 xlabel('DWT')
 
 linkaxes([ax2 ax3], 'x'); 
-% linkaxes([ax2 ax3], 'y');

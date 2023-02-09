@@ -1,4 +1,4 @@
-%% load image
+%% ucitaj sliku
 im = rescale(imread('data/kg_.png'));
 im((im > 0.3) & (im < 0.7)) = 0;
 x = im(:);

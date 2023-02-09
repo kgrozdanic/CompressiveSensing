@@ -1,4 +1,4 @@
-%% vizualizacije koherentnosti
+%% vizualizacija koherentnosti
 n = 1024 * 4;
 
 Hada = sqrt(n) * fwht(eye(n), n, 'sequency');

@@ -1,10 +1,9 @@
-%% podsjetimo se kako su izgledale apsolutne vrijednosti A
 N = 512*8;
 
 Had = sqrt(N) * fwht(eye(N), N, 'sequency');
 
 Cosin = dctmtx(N);
-Haar = generate_wavelet(N, 'haar');%generate_haar(512);
+Haar = generate_wavelet(N, 'haar');
 DB4 = generate_wavelet(N, 'db4');
 
 mats = {Cosin, DB4};
@@ -24,4 +23,4 @@ for i = 1:length(mats)
     end
 end
 
-% saveas(gcf, 'data/coh.png');
+saveas(gcf, 'data/coh.png');

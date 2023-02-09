@@ -1,7 +1,7 @@
-%% uèitaj sliku
+%% ucitaj sliku
 im = rescale(rgb2gray(imread('data/coco5.png')));
 
-% ako se koristi Bernoullijeva matrica, treba smanjiti sliku %
+% ako se koristi Bernoullijeva matrica, treba smanjiti sliku
 % im = imresize(im, 0.25); 
 
 n = size(im, 1);
@@ -12,7 +12,7 @@ epsilon = 1;
 dwtmode('per', 'nodisp');
 shearlet_system = SLgetShearletSystem2D(0, size(im, 1), size(im, 2), 4);
 
-%% matrica oèitavanja
+%% matrica ocitavanja
 Had = sqrt(n) * fwht(eye(n), n, 'sequency');
 opHad = @(x, mode)  fastwht(fastwht(x, [], 'sequency')', [], 'sequency')' * size(x, 1);
 
@@ -51,7 +51,7 @@ for i = 1:4
         label_v.Position(2) = label_v.Position(2) - 10;
         
         if j == 1
-            label_h = ylabel(sprintf('%d%% oèitano', round(perc * 100)), 'FontSize', 13);
+            label_h = ylabel(sprintf('%d%% ocitano', round(perc * 100)), 'FontSize', 13);
             label_h.Position(1) = label_h.Position(1) + 10;
         end  
         if i == 1
@@ -91,7 +91,7 @@ for i = 1:4
         label_v.Position(2) = label_v.Position(2) - 45;
         
         if j == 1
-            label_h = ylabel(sprintf('%d%% oèitano', round(perc * 100)), 'FontSize', 13);
+            label_h = ylabel(sprintf('%d%% ocitano', round(perc * 100)), 'FontSize', 13);
             label_h.Position(1) = label_h.Position(1) + 45;
         end  
         if i == 1
@@ -103,7 +103,7 @@ end
 saveas(gcf, 'plots/p2.png');
 
 
-%% eksperiment 3. - hadamard, dct s posebnom strategijom oèitavanja %%
+%% eksperiment 3. - hadamard, dct s posebnom strategijom ocitavanja %%
 f = figure();
 f.Position =  1e+03 * [1.0003    0.2043    0.8160    1.1340];
 
@@ -138,7 +138,7 @@ for i = 1:4
         label_v.Position(2) = label_v.Position(2) - 55;
         
         if mode == 1
-            label_h = ylabel(sprintf('%d%% oèitano', round(perc * 100)), 'FontSize', 13);
+            label_h = ylabel(sprintf('%d%% ocitano', round(perc * 100)), 'FontSize', 13);
             label_h.Position(1) = label_h.Position(1) + 55;
         end  
         
@@ -148,7 +148,7 @@ for i = 1:4
             subaxis(5, 4, mode, 5, 'Spacing', 0.011, 'Padding', 0, 'Margin', 0.05);
             imshow(z);
             if mode == 1
-                label_h = ylabel('strategija oèitavanja', 'FontSize', 13);
+                label_h = ylabel('strategija ocitavanja', 'FontSize', 13);
                 label_h.Position(1) = label_h.Position(1) + 55;
             end
         end
@@ -158,7 +158,7 @@ end
 saveas(gcf, 'plots/p3.png');
 
 
-%% eksperiment 4. - hadamard, dwt-db4 s posebnom strategijom oèitavanja %%
+%% eksperiment 4. - hadamard, dwt-db4 s posebnom strategijom ocitavanja %%
 f = figure();
 f.Position =  1e+03 * [1.0003    0.2043    0.8160    1.1340];
 
@@ -193,7 +193,7 @@ for i = 1:4
         label_v.Position(2) = label_v.Position(2) - 55;
         
         if mode == 1
-            label_h = ylabel(sprintf('%d%% oèitano', round(perc * 100)), 'FontSize', 13);
+            label_h = ylabel(sprintf('%d%% ocitano', round(perc * 100)), 'FontSize', 13);
             label_h.Position(1) = label_h.Position(1) + 55;
         end  
         if i == 1
@@ -206,7 +206,7 @@ for i = 1:4
             subaxis(5, 4, mode, 5, 'Spacing', 0.011, 'Padding', 0, 'Margin', 0.05);
             imshow(z);
             if mode == 1
-                label_h = ylabel('strategija oèitavanja', 'FontSize', 13);
+                label_h = ylabel('strategija ocitavanja', 'FontSize', 13);
                 label_h.Position(1) = label_h.Position(1) + 55;
             end
         end

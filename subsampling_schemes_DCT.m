@@ -1,14 +1,11 @@
-%% dijagonalna strategija oèitavanja
+%% dijagonalna strategija ocitavanja
 function [idx] = subsampling_schemes_DCT(n, m, mode)
     e = ones(n,1);
     
     idx = full(spdiags([e e e e e e e], -3:3, n, n));
     idx = idx(n:-1:1, :);
     idx = idx + full(spdiags([e e e e e e e e e], -4:4, n, n));
-%     
-%     
-%     imshow(idx);
-%     
+
     x = 1:n;
     levels = round([0, 0.06, 0.17, 0.225, 1] * n);
     
