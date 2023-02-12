@@ -215,10 +215,6 @@ for i = 1:4
 end
 
 saveas(gcf, 'data/p4.png');
-
-
-
-
 %% pomocne funkcije %%
 function [im] = sc(im)
     im(im < 0) = 0;
